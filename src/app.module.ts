@@ -30,13 +30,19 @@ import { MulterModule } from '@nestjs/platform-express';
     FileModule,
     HttpModule,
     MulterModule.register({ dest: '/uploads' }),
-    // ServeStaticModule.forRoot({
-    //   rootPath: join(__dirname, '..', '/frontend/build'),
-    //   exclude: ['/api*'],
-    // }),
+    // ServeStatic для /uploads
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'uploads'),
       serveRoot: '/uploads',
+    }),
+    // ServeStatic для фронтенда на /admin
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'frontend/build'),
+      serveRoot: '/admin',
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'appFrontend/build'),
+      serveRoot: '/',
     }),
   ],
 })

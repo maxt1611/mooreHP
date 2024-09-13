@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className={cn()}>
       <h1 className={cn('title')}>Добро пожаловать в админ панель Trodat</h1>
-      <img src="/logo.png" alt="trodat" />
+      <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="trodat" />
     </div>
   );
 };

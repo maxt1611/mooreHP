@@ -67,4 +67,7 @@ export const router = createBrowserRouter([
     ]
   },
 
-]);
+],
+{
+  basename: "/admin",  // Добавляем здесь basename
+});
